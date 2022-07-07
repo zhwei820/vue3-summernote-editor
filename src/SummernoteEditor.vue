@@ -38,13 +38,15 @@ export default {
     };
   },
   mounted() {
-    this.elem = $("#summernoteRefElement");
-    this.elem.summernote(this.config);
-    $(this.elem).on("summernote.change", this.onChange);
-    if (this.modelValue) {
-      $(this.elem).summernote("code", this.modelValue);
-    }
-    this.registerEvents();
+    $(document).ready(function () {
+      this.elem = $("#summernoteRefElement");
+      this.elem.summernote(this.config);
+      $(this.elem).on("summernote.change", this.onChange);
+      if (this.modelValue) {
+        $(this.elem).summernote("code", this.modelValue);
+      }
+      this.registerEvents();
+    });
   },
   watch: {
     modelValue(newValue) {
