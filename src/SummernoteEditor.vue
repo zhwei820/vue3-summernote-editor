@@ -40,14 +40,15 @@ export default {
   mounted() {
     $(document).ready(function () {
       this.elem = $("#summernoteRefElement");
-      console.log(this.elem)
-      debugger
-      this.elem.summernote(this.config);
-      $(this.elem).on("summernote.change", this.onChange);
-      if (this.modelValue) {
-        $(this.elem).summernote("code", this.modelValue);
-      }
-      this.registerEvents();
+
+      setTimeout(function () {
+        this.elem.summernote(this.config);
+        $(this.elem).on("summernote.change", this.onChange);
+        if (this.modelValue) {
+          $(this.elem).summernote("code", this.modelValue);
+        }
+        this.registerEvents();
+      }, 1000);
     });
   },
   watch: {
