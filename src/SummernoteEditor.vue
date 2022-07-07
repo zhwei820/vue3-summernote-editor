@@ -39,19 +39,16 @@ export default {
   },
   mounted() {
     $(document).ready(function () {
-      setTimeout(
-        function () {
-          this.elem = $("#summernoteRefElement");
-debugger
-          this.elem.summernote(this.config);
-          $(this.elem).on("summernote.change", this.onChange);
-          if (this.modelValue) {
-            $(this.elem).summernote("code", this.modelValue);
-          }
-          this.registerEvents();
-        }.bind(this),
-        3000
-      );
+      setTimeout(() => {
+        this.elem = $("#summernoteRefElement");
+        debugger;
+        this.elem.summernote(this.config);
+        $(this.elem).on("summernote.change", this.onChange);
+        if (this.modelValue) {
+          $(this.elem).summernote("code", this.modelValue);
+        }
+        this.registerEvents();
+      }, 3000);
     });
   },
   watch: {
