@@ -38,16 +38,17 @@ export default {
     };
   },
   mounted() {
+    var that = this
     $(document).ready(function () {
       setTimeout(() => {
-        this.elem = $("#summernoteRefElement");
+        that.elem = $("#summernoteRefElement");
         debugger;
-        this.elem.summernote(this.config);
-        $(this.elem).on("summernote.change", this.onChange);
-        if (this.modelValue) {
-          $(this.elem).summernote("code", this.modelValue);
+        that.elem.summernote(that.config);
+        $(that.elem).on("summernote.change", that.onChange);
+        if (that.modelValue) {
+          $(that.elem).summernote("code", that.modelValue);
         }
-        this.registerEvents();
+        that.registerEvents();
       }, 3000);
     });
   },
