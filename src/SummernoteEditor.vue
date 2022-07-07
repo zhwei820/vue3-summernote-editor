@@ -48,7 +48,7 @@ export default {
           $(this.elem).summernote("code", this.modelValue);
         }
         this.registerEvents();
-      }, 1000);
+      }.bind(this), 1000);
     });
   },
   watch: {
