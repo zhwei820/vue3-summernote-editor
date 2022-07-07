@@ -1,5 +1,5 @@
 <template>
-  <div ref="summernoteRefElement"></div>
+  <div ref="summernoteRefElement" id="summernoteRefElement"></div>
 </template>
 
 <script>
@@ -38,7 +38,7 @@ export default {
     };
   },
   mounted() {
-    this.elem = $(this.$refs.summernoteRefElement);
+    this.elem = $("#summernoteRefElement");
     this.elem.summernote(this.config);
     $(this.elem).on("summernote.change", this.onChange);
     if (this.modelValue) {
