@@ -40,6 +40,7 @@ export default {
   mounted() {
     $(document).ready(function () {
       this.elem = $("#summernoteRefElement");
+      console.log(this.elem)
       this.elem.summernote(this.config);
       $(this.elem).on("summernote.change", this.onChange);
       if (this.modelValue) {
